@@ -92,6 +92,12 @@ public class BookList {
 //	}
 
 	public List<Book> search (String searchTitle) {
+		// 空文字をはじく分岐
+		if (searchTitle.equals("")) {
+			System.out.println("文字を入力してください。");
+			List<Book> box = new ArrayList<>();
+			return box;
+		}
 		List<Book> titleBox = list.stream().filter(item -> item.title.contains(searchTitle)).collect(Collectors.toList());
 		return titleBox;
 	}

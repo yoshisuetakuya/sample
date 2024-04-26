@@ -15,7 +15,7 @@ public class Main {
 //			bookList.print();  //本棚を見る
 //			bookList.fullMatch("源氏物語"); // 検索条件に完全一致
 //			bookList.searchPart(""); //	検索条件に部分一致
-			List<Book> titleBox = bookList.search("1"); //検索条件に当てはまったものすべて出力
+			List<Book> titleBox = bookList.search(""); //検索条件に当てはまったものすべて出力
 			for (int i = 0; i < titleBox.size(); i++) {
 				titleBox.get(i).show();
 			}
