@@ -1,6 +1,8 @@
 package sample;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * 本棚クラス
@@ -71,22 +73,27 @@ public class BookList {
 	 * @param searchTitle 検索する本のタイトル
 	 * @return 該当する本のリスト
 	 */
-	public ArrayList<Book> search (String searchTitle) {
-		// 空文字をはじく分岐
-		if (searchTitle.equals("")) {
-			System.out.println("文字を入力してください。");
-			return null;
-		}
-		ArrayList<Book> titleBox = new ArrayList<>(); // 本を一度取り出す箱を用意する
-		// 本を本棚から一冊ずつ取り出してtitleBoxに入れて条件に合致するもので分ける
-		for (int i = 0; i < list.size(); i++) {
-				if(list.get(i).title.contains(searchTitle)) {
-					titleBox.add(list.get(i));
-				}
-		}
+//	public ArrayList<Book> search (String searchTitle) {
+//		// 空文字をはじく分岐
+//		if (searchTitle.equals("")) {
+//			System.out.println("文字を入力してください。");
+//			return null;
+//		}
+//		ArrayList<Book> titleBox = new ArrayList<>(); // 本を一度取り出す箱を用意する
+//		// 本を本棚から一冊ずつ取り出してtitleBoxに入れて条件に合致するもので分ける
+//		for (int i = 0; i < list.size(); i++) {
+//				if(list.get(i).title.contains(searchTitle)) {
+//					titleBox.add(list.get(i));
+//				}
+//		}
+//
+//		return titleBox;
+//
+//	}
 
+	public List<Book> search (String searchTitle) {
+		List<Book> titleBox = list.stream().filter(item -> item.title.contains(searchTitle)).collect(Collectors.toList());
 		return titleBox;
-
 	}
 
 }
