@@ -7,7 +7,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 /**
- *
+ * 食べ物クラス
  * @author 芳末拓也
  *
  */
@@ -29,6 +29,9 @@ public class Food {
 		System.out.println("食べ物の名前：" + this.foodName + ", 冷凍食品:" + this.frozen );
 	}
 
+	/**
+	 * 加熱した食べ物のデータをローカルファイルに保存するメソッド
+	 */
 	public void save() {
 		try {
 			PrintWriter pw = new PrintWriter("C:\\Users\\cyber\\Documents\\rennsyuu\\" + foodName + ".dat");
@@ -40,6 +43,11 @@ public class Food {
 		}
 	}
 
+	/**
+	 *
+	 * @param foodName 食べ物の名前
+	 * @return 加熱した食べ物の情報が書いてあるファイルの中身
+	 */
 	public static Food load (String foodName) {
 		String str = "";
 

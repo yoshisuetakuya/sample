@@ -3,7 +3,7 @@ package practice;
 import java.util.ArrayList;
 
 /**
- *
+ *　電子レンジクラス
  * @author 芳末拓也
  *
  */
@@ -44,21 +44,23 @@ public class MicrowaveOven {
 	public void putIn(Food food) {
 		list.add(food);
 		System.out.println(list.get(0).foodName + "を電子レンジに入れました。");
+		System.out.println(list.get(0).foodName);
 
 	}
 
 	/**
 	 * 全部の食べ物をレンジから取り出すメソッド
-	 * @param food 食べ物
+	 *
 	 */
-	public void putOut(Food food) {
+	public void putOut() {
 		list.clear();
 		System.out.println("全ての食べ物を電子レンジから取り出しました。");
+		System.out.println(list);
 
 	}
 
 	/**
-	 * 冷凍食品だったら解凍しチルド食品はは温める処理をするメソッド
+	 * 冷凍食品だったら解凍しチルド食品は温める処理をするメソッド
 	 * @param food
 	 */
 	public void automaticExecut(Food food) {

@@ -1,5 +1,9 @@
 package practice;
-
+/**
+ * 実行クラス
+ * @author 芳末拓也
+ *
+ */
 public class Main {
 	public static void main(String[] args) {
 		MicrowaveOven microwaveOven = new MicrowaveOven("ABC-1", "白", 3000);
@@ -12,7 +16,7 @@ public class Main {
 		food1.show();
 		food2.show();
 		microwaveOven.putIn(food2);
-		microwaveOven.putOut(food2);
+		microwaveOven.putOut();
 		microwaveOven.automaticExecut(food1);
 		microwaveOven.automaticExecut(food2);
 		food1.save();
